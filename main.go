@@ -1,3 +1,4 @@
+//borrowed from https://gist.github.com/c0d3kid/862276a6291e4aeaf2638e5f7e93a954
 package main
 
 import (
