@@ -1,5 +1,5 @@
 {
-  description = "floxproxy";
+  description = "proxy";
 
   # Nixpkgs / NixOS version to use.
   inputs.nixpkgs.url = "nixpkgs/nixpkgs-unstable";
@@ -31,8 +31,8 @@
           pkgs = nixpkgsFor.${system};
         in
         {
-          floxproxy = pkgs.buildGoModule {
-            pname = "floxproxy";
+          proxy = pkgs.buildGoModule {
+            pname = "proxy";
             inherit version;
             # In 'nix develop', we don't need a copy of the source tree
             # in the Nix store.
@@ -66,6 +66,6 @@
       # The default package for 'nix build'. This makes sense if the
       # flake provides only one package or there is a clear "main"
       # package.
-      defaultPackage = forAllSystems (system: self.packages.${system}.floxproxy);
+      defaultPackage = forAllSystems (system: self.packages.${system}.proxy);
     };
 }
